@@ -65,11 +65,4 @@ function getRandomInteger(min, max) {
 function randomCharacter(characters) {
 	return characters[getRandomInteger(0, characters.length - 1)];
 };
-new Resolver({
-	timeout: 30,
-	iterations: 5,
-	loop:true,
-	constant:"Hello I am ",
-	strings: ['Anurag Shukla','a web developer'],
-	element: document.querySelector('.autoInp') 
-})
+
