@@ -1,19 +1,29 @@
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 class Resolver{
 	constructor(options){
 		this.resolve(options);
 		this.counter=0
 	}
+	async deleteText(options,cb){
+		await sleep(1000)
+		 while(options.constant!==options.element.textContent){
+			options.element.textContent = options.element.textContent.slice(0,options.element.textContent.length-1)
+			await sleep(100)
+		}
+	cb()
+	}
 	doResolverEffect(options, callback) {
 		const resolveString = options.resolveString;
+		const len = resolveString.length
 		const offset = options.offset;
 		const partialString = resolveString.substring(0, offset);
 		const combinedOptions = Object.assign({}, options, { partialString: partialString });
 		this.doRandomiserEffect(combinedOptions, () => {
 			const nextOptions = Object.assign({}, options, { offset: offset + 1 });
-			if (offset <= resolveString.length) {
+			if (offset <= len) {
 				this.doResolverEffect(nextOptions, callback);
 			} else if (typeof callback === "function") {
-				callback();
+				this.deleteText(options,callback)
 			}
 		});
 	}
@@ -56,10 +66,10 @@ function randomCharacter(characters) {
 	return characters[getRandomInteger(0, characters.length - 1)];
 };
 new Resolver({
-	timeout: 10,
+	timeout: 30,
 	iterations: 5,
 	loop:true,
 	constant:"Hello I am ",
-	strings: ['Anurag Shukla','web developer'],
+	strings: ['Anurag Shukla','a web developer'],
 	element: document.querySelector('.autoInp') 
 })

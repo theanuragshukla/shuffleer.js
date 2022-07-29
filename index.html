@@ -3,10 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	
+}
+.autoInp {
+	text-align: center;
+	width: 100vw;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#0ff;
+	font-size: 2rem;
+}
+.autoInp::after{
+	Content:"|";
+	color:red;
+}
+	</style>
 	<script defer src="./script.js"></script>
 </head>
 <body>
-<div class="autoInp">
-</div>
+<div class="autoInp"></div>
 </body>
 </html>
