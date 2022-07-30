@@ -40,7 +40,7 @@ This is all you need to get started:
 var options = {
     strings: ['Hello world' , 'This is sentance 2' , 'and this is another sentance' ],
     loop: true,
-    delay: 20,
+    timeout: 20,
     iterations: 5,
     element: document.querySelector('.autoType'),
     constant: 'this will be prefixed to all strings '
