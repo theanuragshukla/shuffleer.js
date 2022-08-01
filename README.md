@@ -27,7 +27,7 @@ yarn add shufflerJS
 #### CDN
 
 ```html
-<script src="https://unpkg.com/shufflerjs@1.0.0/shuffler.min.js"></script>
+<script src="https://unpkg.com/shufflerjs@latest/shuffler.min.js"></script>
 ```
 
 #### Setup
