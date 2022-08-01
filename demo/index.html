@@ -6,9 +6,31 @@
 	<style>
 	</style>
 	<link rel="stylesheet" href="./style.css">
-	<script defer src="./script.js"></script>
+	<script defer src="./shuffler.min.js"></script>
 </head>
 <body>
 <div class="autoInp"></div>
+<script>
+onload = async () => {
+	const typing = new Resolver({
+		timeout: 20,
+		iterations: 5,
+		loop: true,
+		//      waitBeforeDelete:1000,
+		//      backSpaceTimeOut:1000,
+		//      onComplete:()=>{typing.options.waitBeforeDelete+=100},
+		constant: "Hello I am ",
+		strings: ['Anurag', 'Anurag Shukla'],
+		element: document.querySelector('.autoInp')
+	})
+	await sleep(5000)
+	//      typing.options.strings[2]="hhhhhhhhhhh"
+	//      typing.options.loop=false
+	//      typing.options.timeout=100
+	//      typing.options.iterations=20
+
+
+}
+</script>
 </body>
 </html>
